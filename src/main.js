@@ -8,6 +8,7 @@ new Vue({
   store,
   render: h => h(App),
   mounted() {
+    // this.$store.dispatch('getRSS');
     this.$store.dispatch('fetchData');
   }
 }).$mount('#app');

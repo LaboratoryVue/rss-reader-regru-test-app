@@ -17,7 +17,9 @@ export default new Vuex.Store({
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Headers':
-            'Origin, X-Requested-With, Content-Type, Accept'
+            'Origin, X-Requested-With, Content-Type, Accept',
+          Accept: 'application/rss+xml',
+          'Content-Type': 'application/rss+xml'
         }
       };
       axios
