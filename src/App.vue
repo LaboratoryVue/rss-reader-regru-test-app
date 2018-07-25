@@ -1,24 +1,33 @@
 <template>
-  <div id="app">
-    <feeds />
+  <div class="app-layout">
+    <button class="button" @click="onLoad()" type="button">load rss</button>
   </div>
 </template>
 
+
 <script>
-import Feeds from './components/Feeds';
+const REG = 'https://www.reg.ru/company/news/rss';
 export default {
-  name: 'app',
-  components: {
-    Feeds
+  name: 'appRoot',
+  methods: {
+    onLoad() {
+      this.$store.dispatch('getRSS');
+    }
   }
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-top: 60px;
-}
+
+<style>
+  .app-layout {
+    padding: 2rem;
+  }
+  .button {
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  .button:active,
+  .button:focus {
+    outline: none;
+  }
 </style>
