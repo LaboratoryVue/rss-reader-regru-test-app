@@ -34,7 +34,6 @@ const mutations = {
       el.title = el.title.trim();
       el.picture = picture;
     });
-    console.log(sample);
     // => init state items
     state.items = sample;
   },

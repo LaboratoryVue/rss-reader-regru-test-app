@@ -1,13 +1,19 @@
 <template>
   <div class="search">
-    <input class="search__input" type="text" name="search" placeholder="Поиск ..." />
+    <input v-model="search" class="search__input" type="text" name="search" placeholder="Поиск ..." />
   </div>
 </template>
 
 
 <script>
+// https://stackoverflow.com/questions/46319826/filter-ul-list-by-input-text-vue-js-2
 export default {
-  name: 'Search'
+  name: 'Search',
+  data() {
+    return {
+      search: null
+    };
+  }
 };
 </script>
 
