@@ -5,7 +5,7 @@
       <p class="item__description">
         {{ item.contentSnippet }}
       </p>
-      <figure class="item__thumb">
+      <figure v-if="show" class="item__thumb">
         <img :class="item.picture.className" :src="item.picture.src" alt="">
       </figure>
     </article>
@@ -20,6 +20,11 @@ export default {
     item: {
       type: Object,
       default: () => {}
+    }
+  },
+  computed: {
+    show() {
+      return this.item.picture.className === '' ? false : true;
     }
   }
 };

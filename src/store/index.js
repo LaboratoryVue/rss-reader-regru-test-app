@@ -32,9 +32,7 @@ const mutations = {
       // => clean and reorder object
       delete el.content;
       el.title = el.title.trim();
-      // el = { ...el, picture };
       el.picture = picture;
-      // console.log(el);
     });
     console.log(sample);
     // => init state items
