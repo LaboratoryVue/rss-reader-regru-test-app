@@ -5,9 +5,9 @@ const HtmlPlugin = require('html-webpack-plugin');
 const HtmlTemplatePlugin = require('html-webpack-template');
 const cors = require('cors');
 const axios = require('axios');
-// URLS
-const RSS = 'https://vuejsfeed.com/feed';
-const REG = 'https://www.reg.ru/company/news/rss';
+// RSS URLS
+const VUE_RSS = 'https://vuejsfeed.com/feed';
+const REGRU_RSS = 'https://www.reg.ru/company/news/rss';
 
 module.exports = {
   context: __dirname,
@@ -57,7 +57,7 @@ module.exports = {
       app.use(cors());
       app.get('/feed', function(req, res) {
         axios
-          .get(RSS)
+          .get(REGRU_RSS)
           .then(response => {
             res.send(response.data);
           })
