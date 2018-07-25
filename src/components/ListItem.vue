@@ -3,7 +3,7 @@
     <h4 class="item__title">{{ item.title.trim() }}</h4>
     <article class="item__content">
       <p class="item__description">
-        {{ item.description }}
+        {{ item.description['#text'] }}
       </p>
     </article>
   </div>
