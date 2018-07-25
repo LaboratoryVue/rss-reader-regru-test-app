@@ -1,6 +1,6 @@
 <template>
   <div class="item">
-    <h3 class="item__title">{{ item.title }}</h3>
+    <h2 class="item__title">{{ item.title }}</h2>
     <article class="item__content" :class="contentAlign">
       <figure v-if="show" class="item__thumb">
         <img class="item__image" :class="item.picture.className" :src="item.picture.src" :alt="item.title">
@@ -43,7 +43,11 @@ export default {
 
 <style lang="scss" scoped>
 .item {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.5rem 0;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 
   &__title {
     margin: 0 0 1rem;
@@ -52,13 +56,26 @@ export default {
   &__content {
     padding: 0 0.4rem;
 
+    // IMAGE TO CENTER
     &--center {
       //
       & .item__thumb {
         text-align: center;
+        margin: 0 0 1rem;
+
+        & .item__image {
+          width: 500px;
+          height: auto;
+        }
+      }
+
+      & .item__description {
+        margin-top: 0;
+        margin-bottom: 0;
       }
     }
 
+    // IMAGE TO RIGHT
     &--right {
       &::after {
         content: ' ';
@@ -69,7 +86,7 @@ export default {
 
       & .item__thumb {
         float: right;
-        margin: 0 0 0 10px;
+        margin: 0 0 0 20px;
       }
 
       & .item__description {
