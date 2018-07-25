@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <list-item />
+    <list-item v-for="item in items" :key="item.guid" :item="item" />
   </div>
 </template>
 
@@ -11,6 +11,11 @@ export default {
   name: 'List',
   components: {
     ListItem
+  },
+  computed: {
+    items() {
+      return this.$store.getters.getItems;
+    }
   }
 };
 </script>

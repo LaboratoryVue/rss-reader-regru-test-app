@@ -21,13 +21,17 @@ const actions = {
       .then(response => {
         const xml = new DOMParser().parseFromString(response.data, 'application/xml');
         commit('GET_RSS_ITEMS', xmlToJson(xml).rss.channel.item);
-        // console.log(xmlToJson(xml).rss.channel.item);
+        console.log(xmlToJson(xml).rss);
       })
       .catch(e => console.log(e));
   }
 };
 
-const getters = {};
+const getters = {
+  getItems(state) {
+    return state.items;
+  }
+};
 
 export default new Vuex.Store({
   state,
