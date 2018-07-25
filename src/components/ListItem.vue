@@ -1,13 +1,13 @@
 <template>
   <div class="item">
     <h3 class="item__title">{{ item.title }}</h3>
-    <article class="item__content">
+    <article class="item__content" :class="contentAlign">
+      <figure v-if="show" class="item__thumb">
+        <img class="item__image" :class="item.picture.className" :src="item.picture.src" :alt="item.title">
+      </figure>
       <p class="item__description">
         {{ item.contentSnippet | trancate }}
       </p>
-      <figure v-if="show" class="item__thumb">
-        <img :class="item.picture.className" :src="item.picture.src" :alt="item.title">
-      </figure>
     </article>
   </div>
 </template>
@@ -25,6 +25,11 @@ export default {
   computed: {
     show() {
       return this.item.picture.className === '' ? false : true;
+    },
+    contentAlign() {
+      return this.item.picture.className === 'b-news-article__right'
+        ? 'item__content--right'
+        : 'item__content--center';
     }
   },
   filters: {
@@ -42,6 +47,43 @@ export default {
 
   &__title {
     margin: 0 0 1rem;
+  }
+
+  &__content {
+    padding: 0 0.4rem;
+
+    &--center {
+      //
+      & .item__thumb {
+        text-align: center;
+      }
+    }
+
+    &--right {
+      &::after {
+        content: ' ';
+        display: block;
+        height: 0;
+        clear: both;
+      }
+
+      & .item__thumb {
+        float: right;
+        margin: 0 0 0 10px;
+      }
+
+      & .item__description {
+        overflow: hidden;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      & .item__image {
+        display: block;
+        width: 100px;
+        height: auto;
+      }
+    }
   }
 }
 </style>
