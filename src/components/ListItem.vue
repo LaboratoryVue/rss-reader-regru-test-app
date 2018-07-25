@@ -5,6 +5,7 @@
       <p class="item__description">
         {{ item.contentSnippet }}
       </p>
+      <p>{{ item.content }}</p>
     </article>
   </div>
 </template>
