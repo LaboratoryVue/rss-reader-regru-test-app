@@ -3,10 +3,10 @@
     <h3 class="item__title">{{ item.title }}</h3>
     <article class="item__content">
       <p class="item__description">
-        {{ item.contentSnippet }}
+        {{ item.contentSnippet | trancate }}
       </p>
       <figure v-if="show" class="item__thumb">
-        <img :class="item.picture.className" :src="item.picture.src" alt="">
+        <img :class="item.picture.className" :src="item.picture.src" :alt="item.title">
       </figure>
     </article>
   </div>
@@ -25,6 +25,11 @@ export default {
   computed: {
     show() {
       return this.item.picture.className === '' ? false : true;
+    }
+  },
+  filters: {
+    trancate(value) {
+      return value.split('\n')[0];
     }
   }
 };
