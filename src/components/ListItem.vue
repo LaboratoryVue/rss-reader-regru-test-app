@@ -1,6 +1,6 @@
 <template>
   <div class="item">
-    <h4 class="item__title">{{ item.title }}</h4>
+    <h4 class="item__title">{{ item.title.trim() }}</h4>
     <article class="item__content"></article>
   </div>
 </template>
