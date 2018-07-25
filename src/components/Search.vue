@@ -13,17 +13,19 @@ export default {
 
 
 <style lang="scss" scoped>
-  .search {
-    padding: .8rem;
-    border: 2px solid rgba(0,0,0, .6);
-    border-radius: 4px;
+.search {
+  padding: 0.1rem;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
 
-    &__input {
-      border: none;
+  &__input {
+    border: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 1.6rem;
 
-      &:focus {
-        outline: none;
-      }
+    &:focus {
+      outline: none;
     }
   }
+}
 </style>

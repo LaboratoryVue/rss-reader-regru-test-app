@@ -40,9 +40,9 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 @import '../assets/_variables.scss';
+// ITEM
 .item {
   padding: 1rem 0.5rem 0;
 
