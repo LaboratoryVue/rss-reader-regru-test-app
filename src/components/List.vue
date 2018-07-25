@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     itemID(value) {
-      return value.match(/\d+$/)[0]
+      return value.match(/\d+$/)[0];
     }
   },
   computed: {
@@ -27,7 +27,7 @@ export default {
 
 
 <style lang="scss" scoped>
-  .list {
-    padding: 2rem 0;
-  }
+.list {
+  padding: 2rem 0;
+}
 </style>

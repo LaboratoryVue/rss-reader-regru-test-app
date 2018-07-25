@@ -11,13 +11,13 @@ const state = {
 const mutations = {
   // INIT RSS ITEMS
   INIT_RSS_ITEMS(state, payload) {
-    let sample = [...payload];
+    const sample = [...payload];
     sample.forEach(el => {
+      // => check and add classes
       let picture = {};
       const dummy = document.createElement('html');
       dummy.innerHTML = el.content.trim().slice(0, 1000);
       const image = dummy.getElementsByTagName('img')['0'];
-
       if (image == null) {
         picture.className = '';
         picture.src = '';
@@ -29,10 +29,16 @@ const mutations = {
         }
         picture.src = image.src;
       }
-
-      console.log(picture);
+      // => clean and reorder object
+      delete el.content;
+      el.title = el.title.trim();
+      // el = { ...el, picture };
+      el.picture = picture;
+      // console.log(el);
     });
-    state.items = payload;
+    console.log(sample);
+    // => init state items
+    state.items = sample;
   },
   // INIT DATA
   INIT_DATA(state, payload) {

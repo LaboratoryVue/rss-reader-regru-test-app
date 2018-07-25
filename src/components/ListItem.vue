@@ -1,11 +1,13 @@
 <template>
   <div class="item">
-    <h4 class="item__title">{{ item.title.trim() }}</h4>
+    <h3 class="item__title">{{ item.title }}</h3>
     <article class="item__content">
       <p class="item__description">
         {{ item.contentSnippet }}
       </p>
-      <p>{{ item.content }}</p>
+      <figure class="item__thumb">
+        <img :class="item.picture.className" :src="item.picture.src" alt="">
+      </figure>
     </article>
   </div>
 </template>
@@ -25,11 +27,11 @@ export default {
 
 
 <style lang="scss" scoped>
-  .item {
-    padding: 1rem .5rem;
+.item {
+  padding: 1rem 0.5rem;
 
-    &__title {
-      margin: 0 0 1rem;
-    }
+  &__title {
+    margin: 0 0 1rem;
   }
+}
 </style>
