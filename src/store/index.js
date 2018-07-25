@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-Vue.use(Vuex);
 import axios from 'axios';
+Vue.use(Vuex);
 
 const state = {
   items: [],
