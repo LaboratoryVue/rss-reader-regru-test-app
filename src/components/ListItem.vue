@@ -42,6 +42,7 @@ export default {
 
 
 <style lang="scss" scoped>
+@import '../assets/_variables.scss';
 .item {
   padding: 1rem 0.5rem 0;
 
@@ -96,11 +97,34 @@ export default {
       }
 
       & .item__image {
-        display: block;
         width: 100px;
         height: auto;
       }
     }
   }
+}
+
+// MEDIA QUERIES
+@media all and (max-width: $medium) {
+  .item__content--right .item__thumb,
+  .item__content--center .item__thumb {
+    display: none;
+  }
+}
+
+@media all and (min-width: $medium) and (max-width: $large) {
+  .item__content--right .item__thumb {
+    float: none;
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+  .item__content--right .item__image,
+  .item__content--center .item__thumb .item__image {
+    width: 160px;
+  }
+}
+
+@media all and (min-width: $large) {
+  //
 }
 </style>
