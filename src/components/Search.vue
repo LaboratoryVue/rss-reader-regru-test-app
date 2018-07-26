@@ -23,6 +23,7 @@ export default {
   border-radius: 4px;
 
   &__input {
+    width: 100%;
     border: none;
     padding: 0.4rem 0.8rem;
     font-size: 1.6rem;

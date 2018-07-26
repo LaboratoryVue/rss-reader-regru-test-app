@@ -55,7 +55,6 @@ export default {
     position: relative;
 
     &__header {
-      border: 1px solid rgba(0,0,0, .4);
       padding: .8rem;
       transition: background-color .2s;
 
@@ -69,7 +68,7 @@ export default {
       }
 
       &--scrolled {
-        background-color: rgba(0,0,0, .4);
+        background-color: rgba(0,0,0, .6);
       }
     }
 
