@@ -27,6 +27,7 @@ export default {
     border: none;
     padding: 0.4rem 0.8rem;
     font-size: 1.6rem;
+    box-sizing: border-box;
 
     &:focus {
       outline: none;

@@ -57,13 +57,13 @@ export default {
     &__header {
       padding: .8rem;
       transition: background-color .2s;
+      box-sizing: border-box;
 
       &--sticky {
         position: fixed;
         left: 0;
         top: 0;
-        // width: 100%;
-        width: 100vw;
+        width: 100%;
         z-index: 999;
       }
 
