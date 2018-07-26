@@ -5,14 +5,8 @@
 </template>
 
 <script>
-// https://stackoverflow.com/questions/46319826/filter-ul-list-by-input-text-vue-js-2
 export default {
   name: 'Search',
-  // data() {
-  //   return {
-  //     search: null
-  //   };
-  // },
   computed: {
     search: {
       get() { return this.$store.getters.getSearch },
@@ -21,7 +15,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .search {

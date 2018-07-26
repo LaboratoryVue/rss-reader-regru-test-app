@@ -30,7 +30,6 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
 .list {
   padding: 2rem 0;
