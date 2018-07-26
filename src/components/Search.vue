@@ -4,7 +4,6 @@
   </div>
 </template>
 
-
 <script>
 // https://stackoverflow.com/questions/46319826/filter-ul-list-by-input-text-vue-js-2
 export default {
