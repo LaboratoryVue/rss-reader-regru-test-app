@@ -71,7 +71,7 @@ const getters = {
     let origin = state.items;
     if(!state.search) return origin;
     const searchValue = state.search.toLowerCase();
-    let itemsFiltered = state.items.filter(item => item.title.toLowerCase().includes(searchValue))
+    let itemsFiltered = state.items.filter(item => item.title.toLowerCase().includes(searchValue) || item.contentSnippet.toLowerCase().includes(searchValue))
     return itemsFiltered;
   },
   getSearch(state) {
