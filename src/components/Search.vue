@@ -9,10 +9,16 @@
 // https://stackoverflow.com/questions/46319826/filter-ul-list-by-input-text-vue-js-2
 export default {
   name: 'Search',
-  data() {
-    return {
-      search: null
-    };
+  // data() {
+  //   return {
+  //     search: null
+  //   };
+  // },
+  computed: {
+    search: {
+      get() { return this.$store.getters.getSearch },
+      set(value) { this.$store.dispatch('setSearch', value) }
+    }
   }
 };
 </script>

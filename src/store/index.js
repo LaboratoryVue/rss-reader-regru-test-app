@@ -5,7 +5,8 @@ Vue.use(Vuex);
 
 const state = {
   items: [],
-  data: {}
+  data: {},
+  search: null
 };
 
 const mutations = {
@@ -40,6 +41,10 @@ const mutations = {
   // INIT DATA
   INIT_DATA(state, payload) {
     state.data = payload;
+  },
+  // SET SEARCH
+  SET_SEARCH(state, payload) {
+    state.search = payload;
   }
 };
 
@@ -52,12 +57,18 @@ const actions = {
         commit('INIT_RSS_ITEMS', response.data.items);
       })
       .catch(e => console.log(e));
+  },
+  setSearch({ commit }, payload) {
+    commit('SET_SEARCH', payload);
   }
 };
 
 const getters = {
   getItems(state) {
     return state.items;
+  },
+  getSearch(state) {
+    return state.search;
   }
 };
 
