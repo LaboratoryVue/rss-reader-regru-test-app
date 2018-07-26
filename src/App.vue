@@ -55,8 +55,8 @@ export default {
     position: relative;
 
     &__header {
-      padding: .8rem;
-      transition: background-color .2s;
+      padding: .8rem .8rem 1.4rem;
+      transition: all .2s;
       box-sizing: border-box;
 
       &--sticky {
@@ -68,12 +68,13 @@ export default {
       }
 
       &--scrolled {
-        background-color: rgba(0,0,0, .6);
+        background-color: lightgreen;
+        box-shadow: 0px 6px 10px 0px rgba(50, 50, 50, 0.75);
       }
     }
 
     &__content {
-      padding-top: 160px;
+      padding-top: 180px;
     }
   }
 
