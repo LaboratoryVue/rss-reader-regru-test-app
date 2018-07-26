@@ -67,6 +67,13 @@ const getters = {
   getItems(state) {
     return state.items;
   },
+  getItemsFiltered(state) {
+    let origin = state.items;
+    if(!state.search) return origin;
+    const searchValue = state.search.toLowerCase();
+    let itemsFiltered = state.items.filter(item => item.title.toLowerCase().includes(searchValue))
+    return itemsFiltered;
+  },
   getSearch(state) {
     return state.search;
   }
