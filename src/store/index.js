@@ -5,7 +5,6 @@ Vue.use(Vuex);
 
 const state = {
   items: [],
-  data: {},
   search: null
 };
 
@@ -14,7 +13,7 @@ const mutations = {
   INIT_RSS_ITEMS(state, payload) {
     const sample = [...payload];
     sample.forEach(el => {
-      // => check and add classes
+      // => CHECK AND ADD CLASSES
       let picture = {};
       const dummy = document.createElement('html');
       dummy.innerHTML = el.content.trim().slice(0, 1000);
@@ -30,17 +29,13 @@ const mutations = {
         }
         picture.src = image.src;
       }
-      // => clean and reorder object
+      // => CLEAN AND REORDER OBJECT
       delete el.content;
       el.title = el.title.trim();
       el.picture = picture;
     });
-    // => init state items
+    // => INIT STATE ITEMS
     state.items = sample;
-  },
-  // INIT DATA
-  INIT_DATA(state, payload) {
-    state.data = payload;
   },
   // SET SEARCH
   SET_SEARCH(state, payload) {
@@ -53,7 +48,6 @@ const actions = {
     axios
       .get('/feed')
       .then(response => {
-        commit('INIT_DATA', response.data);
         commit('INIT_RSS_ITEMS', response.data.items);
       })
       .catch(e => console.log(e));
@@ -64,9 +58,6 @@ const actions = {
 };
 
 const getters = {
-  getItems(state) {
-    return state.items;
-  },
   getItemsFiltered(state) {
     let origin = state.items;
     if(!state.search) return origin;

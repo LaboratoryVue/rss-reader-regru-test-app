@@ -6,6 +6,9 @@ const app = new Vue({
   store,
   render(h) {
     return h(App);
+  },
+  mounted() {
+    this.$store.dispatch('getRSS');
   }
 });
 

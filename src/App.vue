@@ -1,11 +1,8 @@
 <template>
   <div class="rss">
-    <!-- <h1 class="rss__title">Новостная лента <span class="uppercase">regru</span></h1> -->
-    <h1 class="rss__title">{{ title }}</h1>
-    <h3 class="rss__subtitle">{{ subtitle }}</h3>
+    <h1 class="rss__title">Новостная лента <span class="uppercase">regru</span></h1>
     <search />
     <list />
-    <button class="button" @click="onLoad()" type="button">load rss</button>
   </div>
 </template>
 
@@ -18,19 +15,6 @@ export default {
   components: {
     Search,
     List
-  },
-  methods: {
-    onLoad() {
-      this.$store.dispatch('getRSS');
-    }
-  },
-  computed: {
-    title() {
-      return this.$store.state.data.title;
-    },
-    subtitle() {
-      return this.$store.state.data.description;
-    }
   }
 };
 </script>
